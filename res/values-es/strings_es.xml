@@ -6,16 +6,16 @@
     <string name="drawer_close">Cerrar</string>
 
     <string-array name="MenuDrawerStuff">
-        <item>Books</item>
+        <item>Libros</item>
         <item>Calendario</item>
         <item>Chrome</item>
         <item>Currents</item>
         <item>Drive</item>
         <item>Earth</item>
         <item>Finance</item>
-        <item>GMail</item>
+        <item>Gmail</item>
         <item>Goggles</item>
-        <item>Google Search</item>
+        <item>Búsqueda de Google</item>
         <item>Google+</item>
         <item>Hangouts</item>
         <item>Helpouts ($)</item>

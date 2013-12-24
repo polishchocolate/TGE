@@ -6,28 +6,28 @@
     <string name="drawer_close">Fechar</string>
 
     <string-array name="MenuDrawerStuff">
-        <item>Books</item>
+        <item>Livros</item>
         <item>Calendar</item>
         <item>Chrome</item>
         <item>Currents</item>
-        <item>Docs</item>
+        <item>Drive</item>
         <item>Earth</item>
         <item>Finance</item>
-        <item>GMail</item>
+        <item>Gmail</item>
         <item>Goggles</item>
-        <item>Google Search</item>
-        <item>Google Plus</item>
+        <item>Pesquisa Google</item>
+        <item>Google+</item>
         <item>Hangouts</item>
         <item>Helpouts ($)</item>
         <item>Keep</item>
-        <item>Magazines</item>
+        <item>Quiosque</item>
         <item>Maps</item>
-        <item>Movies</item>
+        <item>Filmes e TV</item>
         <item>Music</item>
-        <item>Play Games</item>
+        <item>Jogos Play</item>
         <item>Quick Office</item>
         <item>Street</item>
-        <item>Translate</item>
+        <item>Tradutor</item>
         <item>Voice Search</item>
         <item>Wallet</item>
         <item>Youtube</item>

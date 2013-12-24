@@ -29,6 +29,7 @@
         <item>Street</item>
         <item>Traduction</item>
         <item>Recherche Vocale</item>
+		<item>Wallet</item>
         <item>Youtube</item>
     </string-array>
         <string name="the">The</string>
