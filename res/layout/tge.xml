@@ -4,6 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:background="@color/navigation_background">
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/welcomePager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e4e4e4" >
+
+        <android.support.v4.view.PagerTabStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/black" />
+        </android.support.v4.view.ViewPager>      
 
     <FrameLayout
         android:id="@+id/content_frame"

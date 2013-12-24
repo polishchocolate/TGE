@@ -1,6 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/nowCardStyle"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -8,20 +7,18 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="fitStart"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_google"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/textView1"
+    <Button
+        android:id="@+id/welcomeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:fontFamily="catull"
-        android:textColor="#0266C8"
-        android:text="@string/the_google_experience_"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/learn_more_" />
 
 </RelativeLayout>

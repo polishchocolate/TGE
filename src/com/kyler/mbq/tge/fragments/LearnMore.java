@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.kyler.mbq.tge.R;
 
-public class Welcome extends Fragment {
+public class LearnMore extends Fragment {
 
     View view;
 
@@ -16,7 +16,7 @@ public class Welcome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.welcome, container, false);
+        View view = inflater.inflate(R.layout.learn_more, container, false);
 
         return view;
     }
