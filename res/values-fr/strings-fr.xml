@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">L'expérience Google</string>
+    <string name="app_name">L\'expérience Google</string>
     <string name="drawer_open">Ouvert</string>
     <string name="drawer_close">Fermé</string>
 
@@ -32,7 +32,7 @@
         <item>Wallet</item>
         <item>Youtube</item>
     </string-array>
-        <string name="the">L'</string>
+        <string name="the">L\'</string>
         <string name="experience_">Expérience.</string>
         <string name="learn_more_">Apprendre plus</string>
         <string name="about">A propos</string>
@@ -41,14 +41,14 @@
         <string name="first_run_title">Premier contrôle root</string>
             <string name="su_success_title">Succès!</string>
     <string name="su_failed_title">Oups!</string>
-    <string name="first_run_message">L'application à besoin d'un contrôle root et
+    <string name="first_run_message">L\'application à besoin d\'un contrôle root et
         busybox. Appuyé sur OK pour continué.
     </string>
     <string name="su_success_message">Performance Control was able to get root access and
         find busybox. Ready to rock!
     </string>
     <string name="su_cancel_message">Vous avez choisi de ne pas contrôler la root et la busybox.
-        Plus d'informations pour travailler sans l'accès routeur. Désolé!
+        Plus d\'informations pour travailler sans l\'accès routeur. Désolé!
     </string>
     <string name="su_failed_su_or_busybox">Root access failed or busybox was not found. Most
         options will not work without root access. Sorry!
