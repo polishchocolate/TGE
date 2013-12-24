@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">The Google Experience</string>
-    <string name="drawer_open">Open</string>
-    <string name="drawer_close">Close</string>
+    <string name="app_name">L'expérience Google</string>
+    <string name="drawer_open">Ouvert</string>
+    <string name="drawer_close">Fermé</string>
 
     <string-array name="MenuDrawerStuff">
         <item>Books</item>
@@ -32,23 +32,23 @@
         <item>Wallet</item>
         <item>Youtube</item>
     </string-array>
-        <string name="the">The</string>
-        <string name="experience_">Experience.</string>
-        <string name="learn_more_">Learn more</string>
-        <string name="about">About</string>
+        <string name="the">L'</string>
+        <string name="experience_">Expérience.</string>
+        <string name="learn_more_">Apprendre plus</string>
+        <string name="about">A propos</string>
         <string name="explanation">This idea hit me yesterday as I was using Chrome. I had it in Windows 8 mode, and it hit me. Why not bring all the best and most popular Google apps to YOU, the user. In one convenient location. Simply slide the MenuDrawer, and pick the app you want. It opens, you\'re happy, I\'m happy. We all win here.</string>
 
-        <string name="first_run_title">First check for root</string>
-            <string name="su_success_title">Success!</string>
-    <string name="su_failed_title">Oops!</string>
-    <string name="first_run_message">The application needs to check for root access and
-        busybox. Press OK to continue.
+        <string name="first_run_title">Premier contrôle root</string>
+            <string name="su_success_title">Succès!</string>
+    <string name="su_failed_title">Oups!</string>
+    <string name="first_run_message">L'application à besoin d'un contrôle root et
+        busybox. Appuyé sur OK pour continué.
     </string>
     <string name="su_success_message">Performance Control was able to get root access and
         find busybox. Ready to rock!
     </string>
-    <string name="su_cancel_message">You have chosen to not check for root and busybox.
-        Most options will not work without root access. Sorry!
+    <string name="su_cancel_message">Vous avez choisi de ne pas contrôler la root et la busybox.
+        Plus d'informations pour travailler sans l'accès routeur. Désolé!
     </string>
     <string name="su_failed_su_or_busybox">Root access failed or busybox was not found. Most
         options will not work without root access. Sorry!
