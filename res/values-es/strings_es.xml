@@ -7,34 +7,34 @@
 
     <string-array name="MenuDrawerStuff">
         <item>Books</item>
-        <item>Calendar</item>
+        <item>Calendario</item>
         <item>Chrome</item>
         <item>Currents</item>
-        <item>Docs</item>
+        <item>Drive</item>
         <item>Earth</item>
         <item>Finance</item>
         <item>GMail</item>
         <item>Goggles</item>
         <item>Google Search</item>
-        <item>Google Plus</item>
+        <item>Google+</item>
         <item>Hangouts</item>
         <item>Helpouts ($)</item>
         <item>Keep</item>
-        <item>Magazines</item>
+        <item>Play Kiosco</item>
         <item>Maps</item>
-        <item>Movies</item>
+        <item>Movies y TV</item>
         <item>Music</item>
         <item>Play Games</item>
         <item>Quick Office</item>
         <item>Street</item>
-        <item>Translate</item>
-        <item>Voice Search</item>
+        <item>Traductor</item>
+        <item>Búsqueda por voz</item>
         <item>Wallet</item>
-        <item>Youtube</item>
+        <item>YouTube</item>
     </string-array>
         <string name="the">La</string>
         <string name="experience_">Experiencia.</string>
-        <string name="learn_more_">Aprender mas.</string>
+        <string name="learn_more_">Aprender mas</string>
         <string name="about">Acerca de</string>
         <string name="explanation">Ésta Idea me golpeó ayer cuando estaba usando Chrome. Lo tengo en versión Windows 8 y me golpeó. Por que no traer la mejor y más popular aplicación de Google para ti, el usuario, en una conveniente posicion. Simplemente desliza el MenuDrawer, y elige la app que tu quieras. Es abre, tu eres feliz, yo soy feliz. Aquí todos ganamos.</string>
 
@@ -53,4 +53,7 @@
     <string name="su_failed_su_or_busybox">El acceso a el Root falló o Busybox no fue encontrado. 
         La mayoría de las opiniones no van a trabajar sin el acceso a el root. Disculpa!
     </string>
+	<string name="the_google_experience_">La Experiencia Google.</string>
+    <string name="play_store">Play Store</string>
+    <string name="books">Libros</string>
 </resources>
