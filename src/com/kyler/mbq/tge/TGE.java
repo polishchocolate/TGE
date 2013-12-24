@@ -169,6 +169,18 @@ public class TGE extends FragmentActivity {
 		return false;
 	}
 
+	public void onConfigurationChanged2(Configuration newConfig2) {       
+	        try {     
+	            super.onConfigurationChanged(newConfig2);      
+	            if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {      
+	                // land      
+	            } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {      
+	               // port       
+	            }    
+	        } catch (Exception ex) {       
+	     }
+	}
+	        
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -329,6 +341,55 @@ public class TGE extends FragmentActivity {
 				downloadDialog.show();
 			}
 			break;
+			
+	/*	case 3:
+			try {
+				Intent intent = new Intent("android.intent.action.MAIN");
+				intent.setComponent(ComponentName
+						.unflattenFromString("com.google.android.apps.chrome.ChromeApplication/com.google.android.apps.chrome.Main"));
+				intent.addCategory("android.intent.category.LAUNCHER");
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+				this.overridePendingTransition(R.anim.ltr, R.anim.rtl);
+			} catch (ActivityNotFoundException e) {
+				Toast.makeText(
+						this.getApplicationContext(),
+						"There was a problem loading the application: "
+								+ "Google Chrome Beta", Toast.LENGTH_LONG).show();
+				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
+						this);
+				downloadDialog.setTitle(":(");
+				downloadDialog
+						.setMessage("C'mon man. You gotta install it first.");
+				downloadDialog.setPositiveButton("Help me please",
+						new DialogInterface.OnClickListener() {
+							public void onClick(
+									DialogInterface dialogInterface, int i) {
+								Uri uri = Uri
+										.parse("market://details?id=com.chrome.beta");
+								Intent intent = new Intent(Intent.ACTION_VIEW,
+										uri);
+								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+								try {
+									TGE.this.startActivity(intent);
+									intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+								} catch (ActivityNotFoundException e) {
+									TGE.this.showAlert("ERROR",
+											"Google Play Store not found! wtf is going on");
+								}
+							}
+						});
+				downloadDialog.setNegativeButton("I'm better than u lol",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int i) {
+
+								dialog.dismiss();
+								finish();
+							}
+						});
+				downloadDialog.show();
+			} 
+			break; */
 		}
 
 		ft.commit();
