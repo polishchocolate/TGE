@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The Google Experience</string>
+    <string name="drawer_open">Открыть</string>
+    <string name="drawer_close">Закрыть</string>
+
+    <string-array name="MenuDrawerStuff">
+        <item>Книги</item>
+        <item>Календарьr</item>
+        <item>Chrome</item>
+        <item>Медиа</item>
+        <item>Документы</item>
+        <item>Земля</item>
+        <item>Финансы</item>
+        <item>GMail</item>
+        <item>Goggles</item>
+        <item>Поиск Google</item>
+        <item>Google Плюс</item>
+        <item>Hangouts</item>
+        <item>Helpouts ($)</item>
+        <item>Keep</item>
+        <item>Журналы</item>
+        <item>Карты</item>
+        <item>Фильмы</item>
+        <item>Музыка</item>
+        <item>Play Игры</item>
+        <item>Quick Office</item>
+        <item>Просмотр улиц</item>
+        <item>Переводчик</item>
+        <item>Голосовой поиск</item>
+        <item>Кошелёк</item>
+        <item>Youtube</item>
+    </string-array>
+        <string name="the">The</string>
+        <string name="experience_">Experience.</string>
+        <string name="learn_more_">Узнать больше</string>
+        <string name="about">О программе</string>
+        <string name="explanation">Идея посетила меня вчера, когда я работал с Chrome. Он был в режиме Windows 8, и меня осенило. Почему бы не собрать все самые лучшие и  наиболее популярные приложения Google для ВАС, пользователи. В одном удобном месте. Просто листайте меню и выбирайте приложение, которое Вам нужно. Оно открывается, Вы счастливы, я счастлив. Выигрывают все.</string>
+
+        <string name="first_run_title">Проверка рут-доступа при запуске</string>
+            <string name="su_success_title">Успешно!</string>
+    <string name="su_failed_title">Увы!</string>
+    <string name="first_run_message">Приложение должно проверить рут-доступ и
+        busybox. Нажмите OK для продолжения. 
+    </string>
+    <string name="su_success_message">Управлению производительностью удалось получить рут-доступ и
+        найти busybox. Готово к действию!
+    </string>
+    <string name="su_cancel_message">Вы выбрали не проверять рут и busybox.
+        Большинство опций не будут работать без рут-доступа. Извините!
+    </string>
+    <string name="su_failed_su_or_busybox">Рут-доступ не определён или не найден busybox. Большинство
+        опций не будут работать без рут-доступа. Извините!
+    </string>
+    <string name="the_google_experience_">The Google Experience.</string>
+    <string name="play_store">Play Store</string>
+    <string name="books">Книги</string>
+</resources>
