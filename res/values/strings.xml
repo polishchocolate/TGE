@@ -10,19 +10,19 @@
         <item>Calendar</item>
         <item>Chrome</item>
         <item>Currents</item>
-        <item>Docs</item>
+        <item>Drive</item>
         <item>Earth</item>
         <item>Finance</item>
         <item>GMail</item>
         <item>Goggles</item>
         <item>Google Search</item>
-        <item>Google Plus</item>
+        <item>Google+</item>
         <item>Hangouts</item>
         <item>Helpouts ($)</item>
         <item>Keep</item>
-        <item>Magazines</item>
+        <item>Newsstand</item>
         <item>Maps</item>
-        <item>Movies</item>
+        <item>Movies and TV</item>
         <item>Music</item>
         <item>Play Games</item>
         <item>Quick Office</item>
@@ -30,11 +30,11 @@
         <item>Translate</item>
         <item>Voice Search</item>
         <item>Wallet</item>
-        <item>Youtube</item>
+        <item>YouTube</item>
     </string-array>
         <string name="the">The</string>
         <string name="experience_">Experience.</string>
-        <string name="learn_more_">Learn more.</string>
+        <string name="learn_more_">Learn more</string>
         <string name="about">About</string>
         <string name="explanation">This idea hit me yesterday as I was using Chrome. I had it in Windows 8 mode, and it hit me. Why not bring all the best and most popular Google apps to YOU, the user. In one convenient location. Simply slide the MenuDrawer, and pick the app you want. It opens, you\'re happy, I\'m happy. We all win here.</string>
 
