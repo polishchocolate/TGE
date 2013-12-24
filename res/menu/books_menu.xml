@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/PSbooks"
+        android:icon="@drawable/ic_menu_shop_holo_dark"
+        android:showAsAction="always|withText"
+        android:title="@string/play_store">
+    </item>
+
+</menu>

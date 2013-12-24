@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -36,7 +37,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kyler.mbq.tge.fragments.Welcome;
+import com.kyler.mbq.tge.activities.BooksActivity;
+import com.kyler.mbq.tge.adapters.WelcomePagerAdapter;
 
 public class TGE extends FragmentActivity {
 	SharedPreferences mPreferences;
@@ -77,7 +79,7 @@ public class TGE extends FragmentActivity {
 
 	private String[] mCategories;
 
-	Fragment welcome = new Welcome();
+	// Fragment welcome = new Welcome();
 
 	private Process p;
 
@@ -150,6 +152,12 @@ public class TGE extends FragmentActivity {
 
 			selectItem(0);
 		}
+
+		ViewPager viewPager = (ViewPager) findViewById(R.id.welcomePager);
+
+		// Set the ViewPagerAdapter into ViewPager
+		viewPager.setAdapter(new WelcomePagerAdapter(
+				getSupportFragmentManager()));
 	}
 
 	@Override
@@ -224,59 +232,46 @@ public class TGE extends FragmentActivity {
 		switch (position) {
 
 		case 0:
-			ft.replace(R.id.content_frame, welcome);
+			// ft.replace(R.id.content_frame, welcome);
 			break;
 
 		case 1:
-			try {
-				Intent intent = new Intent("android.intent.action.MAIN");
-				intent.setComponent(ComponentName
-						.unflattenFromString("com.google.android.apps.books/com.google.android.apps.books.app.BooksActivity"));
-				intent.addCategory("android.intent.category.LAUNCHER");
-				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startActivity(intent);
-				this.overridePendingTransition(R.anim.ltr,
-		                   R.anim.rtl);
-			} catch (ActivityNotFoundException e) {
-				Toast.makeText(
-						this.getApplicationContext(),
-						"There was a problem loading the application: "
-								+ "Google Books", Toast.LENGTH_LONG).show();
-				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
-						this);
-				downloadDialog.setTitle(":(");
-				downloadDialog
-						.setMessage("C'mon man. You gotta install it first.");
-				downloadDialog.setPositiveButton("Help me please",
-						new DialogInterface.OnClickListener() {
-							public void onClick(
-									DialogInterface dialogInterface, int i) {
-								Uri uri = Uri
-										.parse("market://details?id=com.google.android.apps.books");
-								Intent intent = new Intent(Intent.ACTION_VIEW,
-										uri);
-								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								try {
-									TGE.this.startActivity(intent);
-									intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								} catch (ActivityNotFoundException e) {
-									TGE.this.showAlert("ERROR",
-											"Google Play Store not found! wtf is going on");
-								}
-							}
-						});
-				downloadDialog.setNegativeButton("I'm better than u lol",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int i) {
-								
-								dialog.dismiss();
-								finish();
-							}
-						});
-				downloadDialog.show();
-			}
+			/*
+			 * try { Intent intent = new Intent("android.intent.action.MAIN");
+			 * intent.setComponent(ComponentName .unflattenFromString(
+			 * "com.google.android.apps.books/com.google.android.apps.books.app.BooksActivity"
+			 * )); intent.addCategory("android.intent.category.LAUNCHER");
+			 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			 * startActivity(intent); this.overridePendingTransition(R.anim.ltr,
+			 * R.anim.rtl); } catch (ActivityNotFoundException e) {
+			 * Toast.makeText( this.getApplicationContext(),
+			 * "There was a problem loading the application: " + "Google Books",
+			 * Toast.LENGTH_LONG).show(); AlertDialog.Builder downloadDialog =
+			 * new AlertDialog.Builder( this); downloadDialog.setTitle(":(");
+			 * downloadDialog
+			 * .setMessage("C'mon man. You gotta install it first.");
+			 * downloadDialog.setPositiveButton("Help me please", new
+			 * DialogInterface.OnClickListener() { public void onClick(
+			 * DialogInterface dialogInterface, int i) { Uri uri = Uri
+			 * .parse("market://details?id=com.google.android.apps.books");
+			 * Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); try {
+			 * TGE.this.startActivity(intent);
+			 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); } catch
+			 * (ActivityNotFoundException e) { TGE.this.showAlert("ERROR",
+			 * "Google Play Store not found! wtf is going on"); } } });
+			 * downloadDialog.setNegativeButton("I'm better than u lol", new
+			 * DialogInterface.OnClickListener() { public void
+			 * onClick(DialogInterface dialog, int i) {
+			 * 
+			 * dialog.dismiss(); finish(); } }); downloadDialog.show(); }
+			 */
+
+			Intent books = new Intent(this, BooksActivity.class);
+			books.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+			startActivity(books);
 			break;
-			
+
 		case 2:
 			try {
 				Intent intent = new Intent("android.intent.action.MAIN");
@@ -285,8 +280,7 @@ public class TGE extends FragmentActivity {
 				intent.addCategory("android.intent.category.LAUNCHER");
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(intent);
-				this.overridePendingTransition(R.anim.ltr,
-		                   R.anim.rtl);
+				this.overridePendingTransition(R.anim.ltr, R.anim.rtl);
 			} catch (ActivityNotFoundException e) {
 				Toast.makeText(
 						this.getApplicationContext(),
@@ -318,13 +312,13 @@ public class TGE extends FragmentActivity {
 				downloadDialog.setNegativeButton("I'm better than u lol",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int i) {
-								
+
 								dialog.dismiss();
 								finish();
 							}
 						});
 				downloadDialog.show();
-			}		
+			}
 			break;
 		case 3:
 			try {

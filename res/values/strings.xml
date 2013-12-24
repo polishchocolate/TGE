@@ -53,4 +53,7 @@
     <string name="su_failed_su_or_busybox">Root access failed or busybox was not found. Most
         options will not work without root access. Sorry!
     </string>
+    <string name="the_google_experience_">The Google Experience.</string>
+    <string name="play_store">Play Store</string>
+    <string name="books">Books</string>
 </resources>
