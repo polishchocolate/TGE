@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">A Experiência do Google</string>
+    <string name="drawer_open">Abrir</string>
+    <string name="drawer_close">Fechar</string>
+
+    <string-array name="MenuDrawerStuff">
+        <item>Books</item>
+        <item>Calendar</item>
+        <item>Chrome</item>
+        <item>Currents</item>
+        <item>Docs</item>
+        <item>Earth</item>
+        <item>Finance</item>
+        <item>GMail</item>
+        <item>Goggles</item>
+        <item>Google Search</item>
+        <item>Google Plus</item>
+        <item>Hangouts</item>
+        <item>Helpouts ($)</item>
+        <item>Keep</item>
+        <item>Magazines</item>
+        <item>Maps</item>
+        <item>Movies</item>
+        <item>Music</item>
+        <item>Play Games</item>
+        <item>Quick Office</item>
+        <item>Street</item>
+        <item>Translate</item>
+        <item>Voice Search</item>
+        <item>Wallet</item>
+        <item>Youtube</item>
+    </string-array>
+        <string name="the">A</string>
+        <string name="experience_">Experiencia.</string>
+        <string name="learn_more_">Aprender mais.</string>
+        <string name="about">Sobre</string>
+        <string name="explanation">Essa idéia me bateu ontem como eu estava usando o Chrome. Eu tive-o no modo Windows 8, e ele me bateu. Por que não trazer todos os melhores e mais populares aplicativos do Google para você, o usuário, em um local conveniente. Basta deslizar o MenuDrawer, e escolher o aplicativo que você deseja. Ela abre, você esta feliz, eu estou feliz. Todos nós ganhamos aqui.</string>
+
+        <string name="first_run_title">Premiero cheque de root</string>
+            <string name="su_success_title">Sucesso!</string>
+    <string name="su_failed_title">Oops!</string>
+    <string name="first_run_message">O aplicativo precisa verificar se há accesso root
+        e busybox. Pressione OK para continuar.
+    </string>
+    <string name="su_success_message">Controle de Desempenho foi capaz de obter acesso root
+        e encontrar busybox. Para o rock!
+    </string>
+    <string name="su_cancel_message">Você optou por não verificar a existência de raiz e busybox.
+        A maioria das opções não funciona sem acesso root. Desculpe!
+    </string>
+    <string name="su_failed_su_or_busybox">Acesso Root falhou ou busybox não foi encontrado.
+        A maioria das opções não funciona sem acesso root. Desculpe!
+    </string>
+</resources>
