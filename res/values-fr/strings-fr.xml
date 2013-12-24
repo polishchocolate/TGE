@@ -1,59 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">L\'expérience Google</string>
+    <string name="app_name">The Google Experience</string>
     <string name="drawer_open">Ouvert</string>
     <string name="drawer_close">Fermé</string>
 
     <string-array name="MenuDrawerStuff">
-        <item>Books</item>
-        <item>Calendar</item>
+        <item>Livres</item>
+        <item>Agenda</item>
         <item>Chrome</item>
-        <item>Currents</item>
-        <item>Docs</item>
+        <item>Kiosque</item>
+        <item>Drive</item>
         <item>Earth</item>
         <item>Finance</item>
         <item>GMail</item>
         <item>Goggles</item>
-        <item>Google Search</item>
+        <item>Recherche Google</item>
         <item>Google Plus</item>
         <item>Hangouts</item>
         <item>Helpouts ($)</item>
         <item>Keep</item>
         <item>Magazines</item>
         <item>Maps</item>
-        <item>Movies</item>
-        <item>Music</item>
-        <item>Play Games</item>
+        <item>Films et TV</item>
+        <item>Musique</item>
+        <item>Play Jeux</item>
         <item>Quick Office</item>
         <item>Street</item>
-        <item>Translate</item>
-        <item>Voice Search</item>
-        <item>Wallet</item>
+        <item>Traduction</item>
+        <item>Recherche Vocale</item>
         <item>Youtube</item>
     </string-array>
-        <string name="the">L\'</string>
-        <string name="experience_">Expérience.</string>
-        <string name="learn_more_">Apprendre plus</string>
+        <string name="the">The</string>
+        <string name="experience_">Experience.</string>
+        <string name="learn_more_">En Savoir Plus</string>
         <string name="about">A propos</string>
-        <string name="explanation">This idea hit me yesterday as I was using Chrome. I had it in Windows 8 mode, and it hit me. Why not bring all the best and most popular Google apps to YOU, the user. In one convenient location. Simply slide the MenuDrawer, and pick the app you want. It opens, you\'re happy, I\'m happy. We all win here.</string>
+        <string name="explanation">Cette idée m\'est venue hier lorsque j\'utilisais Chrome. J\'étais en mode Windows 8, et c'est venu comme ça. Pourquoi ne pas apporter les applications Google les plus populaires pour VOUS, utilisateurs. En un seul endroit pratique. Il suffit de faire glisser le MenuDrawer sur la gauche et de choisir l\'application que vous voulez. Elle s\'ouvre, vous êtes content, je suis content. Nous sommes tous gagnant.</string>
 
         <string name="first_run_title">Premier contrôle root</string>
             <string name="su_success_title">Succès!</string>
     <string name="su_failed_title">Oups!</string>
-    <string name="first_run_message">L\'application à besoin d\'un contrôle root et
-        busybox. Appuyé sur OK pour continué.
+    <string name="first_run_message">L\'application a besoin d\'un contrôle root et
+        busybox. Appuyé sur OK pour continuer.
     </string>
-    <string name="su_success_message">Performance Control was able to get root access and
-        find busybox. Ready to rock!
+    <string name="su_success_message">Performance Control a été en mesure d'obtenir l\'accès root et
+        à trouver busybox. C\'est parti !
     </string>
-    <string name="su_cancel_message">Vous avez choisi de ne pas contrôler la root et la busybox.
-        Plus d\'informations pour travailler sans l\'accès routeur. Désolé!
+    <string name="su_cancel_message">Vous avez choisi de ne pas donner utiliser le root et busybox.
+        La plupart des options ne fonctionnent pas sans l'accès root. Désolé!
     </string>
-    <string name="su_failed_su_or_busybox">Root access failed or busybox was not found. Most
-        options will not work without root access. Sorry!
+    <string name="su_failed_su_or_busybox">L'accès root a échoué ou busybox n'a pas été trouvé. 
+        La plupart des options ne fonctionnent pas sans l'accès root. Désolé!
     </string>
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
-    <string name="books">Books</string>
+    <string name="books">Livres</string>
 </resources>
