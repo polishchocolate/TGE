@@ -204,4 +204,5 @@
         android:layout_below="@+id/imageView21"
         android:layout_toLeftOf="@+id/imageView2"
         android:src="@drawable/ic_yt" />
-</RelativeLayout>
+
+</RelativeLayout>

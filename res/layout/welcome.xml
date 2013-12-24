@@ -20,8 +20,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:fontFamily="catull"
-        android:textColor="#0266C8"
         android:text="@string/the_google_experience_"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#0266C8" />
 
 </RelativeLayout>

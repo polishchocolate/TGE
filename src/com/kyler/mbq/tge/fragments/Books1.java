@@ -18,6 +18,14 @@ public class Books1 extends Fragment {
 	View view;
 
 	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+		inflater.inflate(R.menu.books_menu, menu);
+
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		setHasOptionsMenu(true);
@@ -30,14 +38,6 @@ public class Books1 extends Fragment {
 				false);
 
 		return view;
-	}
-
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
-		inflater.inflate(R.menu.books_menu, menu);
-
-		super.onCreateOptionsMenu(menu, inflater);
 	}
 
 	@Override

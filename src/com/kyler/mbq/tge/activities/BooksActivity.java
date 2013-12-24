@@ -8,18 +8,18 @@ import com.kyler.mbq.tge.R;
 import com.kyler.mbq.tge.adapters.BooksPagerAdapter;
 
 public class BooksActivity extends FragmentActivity {
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.books);
-		
-        ViewPager viewPager = (ViewPager) findViewById(R.id.booksPager);
 
-        viewPager.setAdapter(new BooksPagerAdapter(
-                        getSupportFragmentManager()));
+		ViewPager viewPager = (ViewPager) findViewById(R.id.booksPager);
+
+		viewPager
+				.setAdapter(new BooksPagerAdapter(getSupportFragmentManager()));
 	}
 
 }

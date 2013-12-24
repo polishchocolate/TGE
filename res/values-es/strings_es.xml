@@ -32,28 +32,25 @@
         <item>Wallet</item>
         <item>YouTube</item>
     </string-array>
-        <string name="the">La</string>
-        <string name="experience_">Experiencia.</string>
-        <string name="learn_more_">Aprender mas</string>
-        <string name="about">Acerca de</string>
-        <string name="explanation">Ésta Idea me golpeó ayer cuando estaba usando Chrome. Lo tengo en versión Windows 8 y me golpeó. Por que no traer la mejor y más popular aplicación de Google para ti, el usuario, en una conveniente posicion. Simplemente desliza el MenuDrawer, y elige la app que tu quieras. Es abre, tu eres feliz, yo soy feliz. Aquí todos ganamos.</string>
 
-        <string name="first_run_title">Premero verifica el root</string>
-            <string name="su_success_title">Éxito!</string>
+    <string name="the">La</string>
+    <string name="experience_">Experiencia.</string>
+    <string name="learn_more_">Aprender mas</string>
+    <string name="about">Acerca de</string>
+    <string name="explanation">Ésta Idea me golpeó ayer cuando estaba usando Chrome. Lo tengo en versión Windows 8 y me golpeó. Por que no traer la mejor y más popular aplicación de Google para ti, el usuario, en una conveniente posicion. Simplemente desliza el MenuDrawer, y elige la app que tu quieras. Es abre, tu eres feliz, yo soy feliz. Aquí todos ganamos.</string>
+    <string name="first_run_title">Premero verifica el root</string>
+    <string name="su_success_title">Éxito!</string>
     <string name="su_failed_title">Uy!</string>
     <string name="first_run_message">La aplicación necesita verificar el root de acceso y
-        el busybox. Pulsar OK para continuar.
-    </string>
+        el busybox. Pulsar OK para continuar.</string>
     <string name="su_success_message">La Funsión de Control fue habilitada para obtener acceso a el root y
-        buscar el busybox. Listas para rockear!
-    </string>
+        buscar el busybox. Listas para rockear!</string>
     <string name="su_cancel_message">Has escodigo a no verificar el root y el busybox.
-        La mayoría de las opiniones no van a trabajar sin el acceso a el root. Disculpa!
-    </string>
+        La mayoría de las opiniones no van a trabajar sin el acceso a el root. Disculpa!</string>
     <string name="su_failed_su_or_busybox">El acceso a el Root falló o Busybox no fue encontrado. 
-        La mayoría de las opiniones no van a trabajar sin el acceso a el root. Disculpa!
-    </string>
-	<string name="the_google_experience_">La Experiencia Google.</string>
+        La mayoría de las opiniones no van a trabajar sin el acceso a el root. Disculpa!</string>
+    <string name="the_google_experience_">La Experiencia Google.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Libros</string>
+
 </resources>

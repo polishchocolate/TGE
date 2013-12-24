@@ -38,47 +38,107 @@ import android.widget.Toast;
 import com.kyler.mbq.tge.adapters.WelcomePagerAdapter;
 
 public class TGE extends FragmentActivity {
-	SharedPreferences mPreferences;
+	public static class CategoriesFragment extends Fragment {
+
+		public static final String ARG_CATEGORY = "category";
+
+		public CategoriesFragment() {
+
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+
+			View rootView = inflater.inflate(R.layout.fragment_categories,
+					container, false);
+
+			int i = getArguments().getInt(ARG_CATEGORY);
+
+			String List = getResources()
+					.getStringArray(R.array.MenuDrawerStuff)[i];
+
+			getActivity().setTitle(List);
+
+			return rootView;
+
+		}
+	}
+
+	private class DrawerItemClickListener implements
+			ListView.OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			selectItem(position);
+		}
+	}
+
+	private static final int PERIOD = 2000;
+
+	Context context;
 
 	// Used later
 	Intent intent;
 
-	Context context;
-
-	NodeList nodelist;
-
-	ProgressDialog pDialog;
-
 	private long lastPressedTime;
 
-	private static final int PERIOD = 2000;
-
-	WebView wv;
-
-	Notification notification;
-
-	// MMMMMM TOAST
-	Toast toast;
-
-	TextView textview;
+	private String[] mCategories;
 
 	private DrawerLayout mDrawerLayout;
 
 	private ListView mDrawerList;
 
-	SharedPreferences prefs;
+	private CharSequence mDrawerTitle;
 
 	private ActionBarDrawerToggle mDrawerToggle;
 
-	private CharSequence mDrawerTitle;
+	SharedPreferences mPreferences;
 
 	private CharSequence mTitle;
 
-	private String[] mCategories;
+	NodeList nodelist;
+
+	Notification notification;
+
+	private Process p;
+
+	ProgressDialog pDialog;
+
+	SharedPreferences prefs;
 
 	// Fragment welcome = new Welcome();
 
-	private Process p;
+	TextView textview;
+
+	// MMMMMM TOAST
+	Toast toast;
+
+	WebView wv;
+
+	public Process getP() {
+		return p;
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+
+		super.onConfigurationChanged(newConfig);
+
+		mDrawerToggle.onConfigurationChanged(newConfig);
+	}
+
+	public void onConfigurationChanged2(Configuration newConfig2) {
+		try {
+			super.onConfigurationChanged(newConfig2);
+			if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+				// land
+			} else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+				// port
+			}
+		} catch (Exception ex) {
+		}
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -118,6 +178,7 @@ public class TGE extends FragmentActivity {
 				R.string.drawer_close)
 
 		{
+			@Override
 			public void onDrawerClosed(View view) {
 
 				getActionBar().setTitle(mTitle);
@@ -127,6 +188,7 @@ public class TGE extends FragmentActivity {
 
 			}
 
+			@Override
 			public void onDrawerOpened(View drawerView) {
 
 				getActionBar().setTitle(mDrawerTitle);
@@ -152,6 +214,16 @@ public class TGE extends FragmentActivity {
 	}
 
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		MenuInflater inflater = getMenuInflater();
+
+		inflater.inflate(R.menu.tge, menu);
+
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
 			switch (event.getAction()) {
@@ -167,34 +239,6 @@ public class TGE extends FragmentActivity {
 			}
 		}
 		return false;
-	}
-
-	public void onConfigurationChanged2(Configuration newConfig2) {       
-	        try {     
-	            super.onConfigurationChanged(newConfig2);      
-	            if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {      
-	                // land      
-	            } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {      
-	               // port       
-	            }    
-	        } catch (Exception ex) {       
-	     }
-	}
-	        
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		MenuInflater inflater = getMenuInflater();
-
-		inflater.inflate(R.menu.tge, menu);
-
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-
-		return super.onPrepareOptionsMenu(menu);
 	}
 
 	@Override
@@ -220,13 +264,24 @@ public class TGE extends FragmentActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private class DrawerItemClickListener implements
-			ListView.OnItemClickListener {
-		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position,
-				long id) {
-			selectItem(position);
-		}
+	/**
+	 * When using the ActionBarDrawerToggle, you must call it during
+	 * onPostCreate() and onConfigurationChanged()...
+	 */
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+
+		super.onPostCreate(savedInstanceState);
+
+		// Sync the toggle state after onRestoreInstanceState has occurred.
+		mDrawerToggle.syncState();
+	}
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+
+		return super.onPrepareOptionsMenu(menu);
 	}
 
 	private void selectItem(int position) {
@@ -259,6 +314,7 @@ public class TGE extends FragmentActivity {
 						.setMessage("C'mon man. You gotta install it first.");
 				downloadDialog.setPositiveButton("Help me please",
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(
 									DialogInterface dialogInterface, int i) {
 								Uri uri = Uri
@@ -277,6 +333,7 @@ public class TGE extends FragmentActivity {
 						});
 				downloadDialog.setNegativeButton("I'm better than u lol",
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog, int i) {
 
 								dialog.dismiss();
@@ -314,6 +371,7 @@ public class TGE extends FragmentActivity {
 						.setMessage("C'mon man. You gotta install it first.");
 				downloadDialog.setPositiveButton("Help me please",
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(
 									DialogInterface dialogInterface, int i) {
 								Uri uri = Uri
@@ -332,6 +390,7 @@ public class TGE extends FragmentActivity {
 						});
 				downloadDialog.setNegativeButton("I'm better than u lol",
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog, int i) {
 
 								dialog.dismiss();
@@ -341,55 +400,38 @@ public class TGE extends FragmentActivity {
 				downloadDialog.show();
 			}
 			break;
-			
-	/*	case 3:
-			try {
-				Intent intent = new Intent("android.intent.action.MAIN");
-				intent.setComponent(ComponentName
-						.unflattenFromString("com.google.android.apps.chrome.ChromeApplication/com.google.android.apps.chrome.Main"));
-				intent.addCategory("android.intent.category.LAUNCHER");
-				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startActivity(intent);
-				this.overridePendingTransition(R.anim.ltr, R.anim.rtl);
-			} catch (ActivityNotFoundException e) {
-				Toast.makeText(
-						this.getApplicationContext(),
-						"There was a problem loading the application: "
-								+ "Google Chrome Beta", Toast.LENGTH_LONG).show();
-				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
-						this);
-				downloadDialog.setTitle(":(");
-				downloadDialog
-						.setMessage("C'mon man. You gotta install it first.");
-				downloadDialog.setPositiveButton("Help me please",
-						new DialogInterface.OnClickListener() {
-							public void onClick(
-									DialogInterface dialogInterface, int i) {
-								Uri uri = Uri
-										.parse("market://details?id=com.chrome.beta");
-								Intent intent = new Intent(Intent.ACTION_VIEW,
-										uri);
-								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								try {
-									TGE.this.startActivity(intent);
-									intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								} catch (ActivityNotFoundException e) {
-									TGE.this.showAlert("ERROR",
-											"Google Play Store not found! wtf is going on");
-								}
-							}
-						});
-				downloadDialog.setNegativeButton("I'm better than u lol",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int i) {
 
-								dialog.dismiss();
-								finish();
-							}
-						});
-				downloadDialog.show();
-			} 
-			break; */
+		/*
+		 * case 3: try { Intent intent = new
+		 * Intent("android.intent.action.MAIN");
+		 * intent.setComponent(ComponentName .unflattenFromString(
+		 * "com.google.android.apps.chrome.ChromeApplication/com.google.android.apps.chrome.Main"
+		 * )); intent.addCategory("android.intent.category.LAUNCHER");
+		 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		 * startActivity(intent); this.overridePendingTransition(R.anim.ltr,
+		 * R.anim.rtl); } catch (ActivityNotFoundException e) { Toast.makeText(
+		 * this.getApplicationContext(),
+		 * "There was a problem loading the application: " +
+		 * "Google Chrome Beta", Toast.LENGTH_LONG).show(); AlertDialog.Builder
+		 * downloadDialog = new AlertDialog.Builder( this);
+		 * downloadDialog.setTitle(":("); downloadDialog
+		 * .setMessage("C'mon man. You gotta install it first.");
+		 * downloadDialog.setPositiveButton("Help me please", new
+		 * DialogInterface.OnClickListener() { public void onClick(
+		 * DialogInterface dialogInterface, int i) { Uri uri = Uri
+		 * .parse("market://details?id=com.chrome.beta"); Intent intent = new
+		 * Intent(Intent.ACTION_VIEW, uri);
+		 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); try {
+		 * TGE.this.startActivity(intent);
+		 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); } catch
+		 * (ActivityNotFoundException e) { TGE.this.showAlert("ERROR",
+		 * "Google Play Store not found! wtf is going on"); } } });
+		 * downloadDialog.setNegativeButton("I'm better than u lol", new
+		 * DialogInterface.OnClickListener() { public void
+		 * onClick(DialogInterface dialog, int i) {
+		 * 
+		 * dialog.dismiss(); finish(); } }); downloadDialog.show(); } break;
+		 */
 		}
 
 		ft.commit();
@@ -399,9 +441,8 @@ public class TGE extends FragmentActivity {
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
 
-	protected void showAlert(String string, String string2) {
-		// TODO Auto-generated method stub
-
+	public void setP(Process p) {
+		this.p = p;
 	}
 
 	@Override
@@ -410,60 +451,8 @@ public class TGE extends FragmentActivity {
 		getActionBar().setTitle(mTitle);
 	}
 
-	/**
-	 * When using the ActionBarDrawerToggle, you must call it during
-	 * onPostCreate() and onConfigurationChanged()...
-	 */
+	protected void showAlert(String string, String string2) {
+		// TODO Auto-generated method stub
 
-	@Override
-	protected void onPostCreate(Bundle savedInstanceState) {
-
-		super.onPostCreate(savedInstanceState);
-
-		// Sync the toggle state after onRestoreInstanceState has occurred.
-		mDrawerToggle.syncState();
-	}
-
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-
-		super.onConfigurationChanged(newConfig);
-
-		mDrawerToggle.onConfigurationChanged(newConfig);
-	}
-
-	public Process getP() {
-		return p;
-	}
-
-	public void setP(Process p) {
-		this.p = p;
-	}
-
-	public static class CategoriesFragment extends Fragment {
-
-		public static final String ARG_CATEGORY = "category";
-
-		public CategoriesFragment() {
-
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-
-			View rootView = inflater.inflate(R.layout.fragment_categories,
-					container, false);
-
-			int i = getArguments().getInt(ARG_CATEGORY);
-
-			String List = getResources()
-					.getStringArray(R.array.MenuDrawerStuff)[i];
-
-			getActivity().setTitle(List);
-
-			return rootView;
-
-		}
 	}
 }

@@ -10,14 +10,14 @@ import com.kyler.mbq.tge.R;
 
 public class LearnMore extends Fragment {
 
-    View view;
+	View view;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.learn_more, container, false);
+		View view = inflater.inflate(R.layout.learn_more, container, false);
 
-        return view;
-    }
+		return view;
+	}
 }

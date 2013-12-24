@@ -32,28 +32,25 @@
         <item>Wallet</item>
         <item>Youtube</item>
     </string-array>
-        <string name="the">La</string>
-        <string name="experience_">"Experience"</string>
-        <string name="learn_more_">Impara di più</string>
-        <string name="about">A proposito</string>
-        <string name="explanation">Questa idea mi è venuta ieri mentre stavo usando Chrome. Lo ho avuta usando Windows 8, e mi ha colpito. Perché non portare tutte le migliori applicazioni e più popolari di Google a TE, l\'utilizzatore? In un unico posto conveniente. Semplicemente inserirle nel MenuDrawer, e prendere l\'applicazione che tu vuoi. Si apre, tu sei felice, io sono felice. Qui vinciamo tutti.</string>
 
-        <string name="first_run_title">Per prima cosa conrolla la root</string>
-            <string name="su_success_title">Ben fatto!</string>
+    <string name="the">La</string>
+    <string name="experience_">"Experience"</string>
+    <string name="learn_more_">Impara di più</string>
+    <string name="about">A proposito</string>
+    <string name="explanation">Questa idea mi è venuta ieri mentre stavo usando Chrome. Lo ho avuta usando Windows 8, e mi ha colpito. Perché non portare tutte le migliori applicazioni e più popolari di Google a TE, l\'utilizzatore? In un unico posto conveniente. Semplicemente inserirle nel MenuDrawer, e prendere l\'applicazione che tu vuoi. Si apre, tu sei felice, io sono felice. Qui vinciamo tutti.</string>
+    <string name="first_run_title">Per prima cosa conrolla la root</string>
+    <string name="su_success_title">Ben fatto!</string>
     <string name="su_failed_title">Oops!</string>
     <string name="first_run_message">L\'applicazione necessita di controllare l\'accesso alla root ed
-        al busybox. Premi OK per continuare. 
-    </string>
+        al busybox. Premi OK per continuare. </string>
     <string name="su_success_message">Performance Control è in grado di ottenere l\'accesso al root e
-        trovare il busybox. Pronto per partire!
-    </string>
+        trovare il busybox. Pronto per partire!</string>
     <string name="su_cancel_message">Tu hai scelto di non controllare root e busybox.
-        Molte opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!
-    </string>
+        Molte opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!</string>
     <string name="su_failed_su_or_busybox">L\;accesso al roon non ha avuto successo o il busybox non è stato trovato. Molte
-        opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!
-    </string>
+        opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!</string>
     <string name="the_google_experience_">L\'Esperienza Google.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Libri</string>
+
 </resources>

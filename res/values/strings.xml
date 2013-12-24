@@ -31,28 +31,25 @@
         <item>Wallet</item>
         <item>Youtube</item>
     </string-array>
-        <string name="the">The</string>
-        <string name="experience_">Experience.</string>
-        <string name="learn_more_">Learn more</string>
-        <string name="about">About</string>
-        <string name="explanation">This idea hit me yesterday as I was using Chrome. I had it in Windows 8 mode, and it hit me. Why not bring all the best and most popular Google apps to YOU, the user. In one convenient location. Simply slide the MenuDrawer, and pick the app you want. It opens, you\'re happy, I\'m happy. We all win here.</string>
 
-        <string name="first_run_title">First check for root</string>
-            <string name="su_success_title">Success!</string>
+    <string name="the">The</string>
+    <string name="experience_">Experience.</string>
+    <string name="learn_more_">Learn more</string>
+    <string name="about">About</string>
+    <string name="explanation">This idea hit me yesterday as I was using Chrome. I had it in Windows 8 mode, and it hit me. Why not bring all the best and most popular Google apps to YOU, the user. In one convenient location. Simply slide the MenuDrawer, and pick the app you want. It opens, you\'re happy, I\'m happy. We all win here.</string>
+    <string name="first_run_title">First check for root</string>
+    <string name="su_success_title">Success!</string>
     <string name="su_failed_title">Oops!</string>
     <string name="first_run_message">The application needs to check for root access and
-        busybox. Press OK to continue. 
-    </string>
+        busybox. Press OK to continue. </string>
     <string name="su_success_message">Performance Control was able to get root access and
-        find busybox. Ready to rock!
-    </string>
+        find busybox. Ready to rock!</string>
     <string name="su_cancel_message">You have chosen to not check for root and busybox.
-        Most options will not work without root access. Sorry!
-    </string>
+        Most options will not work without root access. Sorry!</string>
     <string name="su_failed_su_or_busybox">Root access failed or busybox was not found. Most
-        options will not work without root access. Sorry!
-    </string>
+        options will not work without root access. Sorry!</string>
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Books</string>
+
 </resources>

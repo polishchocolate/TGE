@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
+    <item name="home_drawer_item_pressed" type="color">@color/books_corpora_primary_60pc</item>
+
+    <color name="books_corpora_primary_60pc">#993f9fe0</color>
+
+    <item name="home_drawer_item" type="color">@android:color/transparent</item>
+
+    <color name="home_drawer">#fffafafa</color>
     <color name="grey">#ff999999</color>
     <color name="primary_text">#ff222222</color>
-    <item type="color" name="navigation_background">@color/detail_fragment_background</item>
+
+    <item name="navigation_background" type="color">@color/detail_fragment_background</item>
+
     <color name="detail_fragment_background">#E6eeeeee</color>
     <color name="navigation_shadow_top">#ffc6c6c6</color>
-    <color name="navigation_shadow_bottom">#ffffffff</color>    
+    <color name="navigation_shadow_bottom">#ffffffff</color>
     <color name="pressed_white">#CCFFFFFF</color>
     <color name="pressed_black">#CC000000</color>
     <color name="transparent_black">#80000000</color>

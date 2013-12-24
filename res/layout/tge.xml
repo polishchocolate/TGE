@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="@color/navigation_background">
-    
+    android:layout_height="match_parent"
+    android:background="@color/navigation_background" >
+
     <android.support.v4.view.ViewPager
         android:id="@+id/welcomePager"
         android:layout_width="match_parent"
@@ -18,35 +18,19 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:textColor="@color/black" />
-        </android.support.v4.view.ViewPager>      
+    </android.support.v4.view.ViewPager>
 
     <FrameLayout
         android:id="@+id/content_frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1.0dip"
-                android:layout_marginLeft="0.0dip"
-                android:background="@color/navigation_shadow_top" />
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1.0dip"
-                android:layout_marginLeft="0.0dip"
-                android:background="@color/navigation_shadow_top" />
-        
-    </FrameLayout>
+        android:layout_width="@dimen/side_panel_max_width"
+        android:layout_height="fill_parent" />
 
     <ListView
         android:id="@+id/left_drawer"
-        android:layout_width="310dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="left|start"
-        android:choiceMode="singleChoice"
-        android:divider="#402d2d2d"
-        android:dividerHeight="1dp"
-        android:background="@color/navigation_background"/>
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="start|left"
+        android:background="@color/home_drawer"
+        android:listSelector="@drawable/home_drawer_list_selector" />
 
 </android.support.v4.widget.DrawerLayout>
