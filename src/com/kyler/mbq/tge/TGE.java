@@ -1,7 +1,5 @@
 package com.kyler.mbq.tge;
 
-import java.io.IOException;
-
 import org.w3c.dom.NodeList;
 
 import android.app.AlertDialog;
@@ -37,7 +35,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kyler.mbq.tge.activities.BooksActivity;
 import com.kyler.mbq.tge.adapters.WelcomePagerAdapter;
 
 public class TGE extends FragmentActivity {
@@ -87,12 +84,6 @@ public class TGE extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-
-		try {
-			setP(Runtime.getRuntime().exec("su"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 
 		setContentView(R.layout.tge);
 
@@ -236,40 +227,58 @@ public class TGE extends FragmentActivity {
 			break;
 
 		case 1:
-			/*
-			 * try { Intent intent = new Intent("android.intent.action.MAIN");
-			 * intent.setComponent(ComponentName .unflattenFromString(
-			 * "com.google.android.apps.books/com.google.android.apps.books.app.BooksActivity"
-			 * )); intent.addCategory("android.intent.category.LAUNCHER");
-			 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			 * startActivity(intent); this.overridePendingTransition(R.anim.ltr,
-			 * R.anim.rtl); } catch (ActivityNotFoundException e) {
-			 * Toast.makeText( this.getApplicationContext(),
-			 * "There was a problem loading the application: " + "Google Books",
-			 * Toast.LENGTH_LONG).show(); AlertDialog.Builder downloadDialog =
-			 * new AlertDialog.Builder( this); downloadDialog.setTitle(":(");
-			 * downloadDialog
-			 * .setMessage("C'mon man. You gotta install it first.");
-			 * downloadDialog.setPositiveButton("Help me please", new
-			 * DialogInterface.OnClickListener() { public void onClick(
-			 * DialogInterface dialogInterface, int i) { Uri uri = Uri
-			 * .parse("market://details?id=com.google.android.apps.books");
-			 * Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-			 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); try {
-			 * TGE.this.startActivity(intent);
-			 * intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); } catch
-			 * (ActivityNotFoundException e) { TGE.this.showAlert("ERROR",
-			 * "Google Play Store not found! wtf is going on"); } } });
-			 * downloadDialog.setNegativeButton("I'm better than u lol", new
-			 * DialogInterface.OnClickListener() { public void
-			 * onClick(DialogInterface dialog, int i) {
-			 * 
-			 * dialog.dismiss(); finish(); } }); downloadDialog.show(); }
-			 */
+			try {
+				Intent intent = new Intent("android.intent.action.MAIN");
+				intent.setComponent(ComponentName
+						.unflattenFromString("com.google.android.apps.books/com.google.android.apps.books.app.BooksActivity"));
+				intent.addCategory("android.intent.category.LAUNCHER");
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+				this.overridePendingTransition(R.anim.ltr, R.anim.rtl);
+			} catch (ActivityNotFoundException e) {
+				Toast.makeText(
+						this.getApplicationContext(),
+						"There was a problem loading the application: "
+								+ "Google Books", Toast.LENGTH_LONG).show();
+				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
+						this);
+				downloadDialog.setTitle(":(");
+				downloadDialog
+						.setMessage("C'mon man. You gotta install it first.");
+				downloadDialog.setPositiveButton("Help me please",
+						new DialogInterface.OnClickListener() {
+							public void onClick(
+									DialogInterface dialogInterface, int i) {
+								Uri uri = Uri
+										.parse("market://details?id=com.google.android.apps.books");
+								Intent intent = new Intent(Intent.ACTION_VIEW,
+										uri);
+								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+								try {
+									TGE.this.startActivity(intent);
+									intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+								} catch (ActivityNotFoundException e) {
+									TGE.this.showAlert("ERROR",
+											"Google Play Store not found! wtf is going on");
+								}
+							}
+						});
+				downloadDialog.setNegativeButton("I'm better than u lol",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int i) {
 
-			Intent books = new Intent(this, BooksActivity.class);
-			books.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-			startActivity(books);
+								dialog.dismiss();
+								finish();
+							}
+						});
+				downloadDialog.show();
+			}
+
+			/*
+			 * Intent books = new Intent(this, BooksActivity.class);
+			 * books.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+			 * startActivity(books);
+			 */
 			break;
 
 		case 2:
@@ -285,7 +294,7 @@ public class TGE extends FragmentActivity {
 				Toast.makeText(
 						this.getApplicationContext(),
 						"There was a problem loading the application: "
-								+ "Google Books", Toast.LENGTH_LONG).show();
+								+ "Google Calendar", Toast.LENGTH_LONG).show();
 				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
 						this);
 				downloadDialog.setTitle(":(");

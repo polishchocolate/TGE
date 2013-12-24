@@ -29,31 +29,28 @@
         <item>Street</item>
         <item>Traduction</item>
         <item>Recherche Vocale</item>
-		<item>Wallet</item>
+        <item>Wallet</item>
         <item>Youtube</item>
     </string-array>
-        <string name="the">The</string>
-        <string name="experience_">Experience.</string>
-        <string name="learn_more_">En Savoir Plus</string>
-        <string name="about">A propos</string>
-        <string name="explanation">Cette idée m\'est venue hier lorsque j\'utilisais Chrome. J\'étais en mode Windows 8, et c'est venu comme ça. Pourquoi ne pas apporter les applications Google les plus populaires pour VOUS, utilisateurs. En un seul endroit pratique. Il suffit de faire glisser le MenuDrawer sur la gauche et de choisir l\'application que vous voulez. Elle s\'ouvre, vous êtes content, je suis content. Nous sommes tous gagnant.</string>
 
-        <string name="first_run_title">Premier contrôle root</string>
-            <string name="su_success_title">Succès!</string>
+    <string name="the">The</string>
+    <string name="experience_">Experience.</string>
+    <string name="learn_more_">En Savoir Plus</string>
+    <string name="about">A propos</string>
+    <string name="explanation">Cette idée m\'est venue hier lorsque j\'utilisais Chrome. J\'étais en mode Windows 8, et c\'est venu comme ça. Pourquoi ne pas apporter les applications Google les plus populaires pour VOUS, utilisateurs. En un seul endroit pratique. Il suffit de faire glisser le MenuDrawer sur la gauche et de choisir l\'application que vous voulez. Elle s\'ouvre, vous êtes content, je suis content. Nous sommes tous gagnant.</string>
+    <string name="first_run_title">Premier contrôle root</string>
+    <string name="su_success_title">Succès!</string>
     <string name="su_failed_title">Oups!</string>
     <string name="first_run_message">L\'application a besoin d\'un contrôle root et
-        busybox. Appuyé sur OK pour continuer.
-    </string>
+        busybox. Appuyé sur OK pour continuer.</string>
     <string name="su_success_message">Performance Control a été en mesure d'obtenir l\'accès root et
-        à trouver busybox. C\'est parti !
-    </string>
+        à trouver busybox. C\'est parti !</string>
     <string name="su_cancel_message">Vous avez choisi de ne pas donner utiliser le root et busybox.
-        La plupart des options ne fonctionnent pas sans l'accès root. Désolé!
-    </string>
+        La plupart des options ne fonctionnent pas sans l'accès root. Désolé!</string>
     <string name="su_failed_su_or_busybox">L'accès root a échoué ou busybox n'a pas été trouvé. 
-        La plupart des options ne fonctionnent pas sans l'accès root. Désolé!
-    </string>
+        La plupart des options ne fonctionnent pas sans l'accès root. Désolé!</string>
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Livres</string>
+
 </resources>
