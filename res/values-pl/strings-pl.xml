@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<resources>
+  <string name="app_name">The Google Experience</string>
+  <string name="drawer_open">Otwórz</string>
+  <string name="drawer_close">Zamknij</string>
+  <string-array name="MenuDrawerStuff">
+    <item>Książki</item>
+    <item>Kalendarz</item>
+    <item>Currents</item>
+    <item>Dysk</item>
+    <item>Earth</item>
+    <item>Finanse</item>
+    <item>Gmail</item>
+    <item>Goggles</item>
+    <item>Wyszukiwarka Google</item>
+    <item>Google Plus</item>
+    <item>Hangouts</item>
+    <item>Helpouts ($)</item>
+    <item>Keep</item>
+    <item>Czasopisma</item>
+    <item>Mapy</item>
+    <item>Filmy</item>
+    <item>Muzyka</item>
+    <item>Gry Google Play</item>
+    <item>Quick Office</item>
+    <item>Street</item>
+    <item>Tłumacz</item>
+    <item>Wyszukiwanie Głosowe</item>
+    <item>Wallet</item>
+    <item>Youtube</item>
+  </string-array>
+  <string name="the">The</string>
+  <string name="experience_">Experience.</string>
+  <string name="learn_more_">Więcej</string>
+  <string name="about">O aplikacji</string>
+  <string name="explanation">Pomysł naszedł mnie wczoraj, gdy używałem Chrome. Miałem to w Windowsie 8, więc dlaczegoby nie skupić wszystkich najlepszych aplikacji od Google'a w jednym, dogodnym miejscu? Po prostu wysuń szufladę menu i wybierz aplikację, którą chcesz. Otwiera się, ty jesteś zadowolony, ja jestem zadowolony. Wszyscy jesteśmy tu zwycięzcami ;)</string>
+  <string name="first_run_title">Najpierw sprawdź dostęp do roota</string>
+  <string name="su_success_title">Sukces!</string>
+  <string name="su_failed_title">Ups!</string>
+  <string name="first_run_message">Aplikacja potrzebuje sprawdzić dostęp do roota i busybox.         Naciśnij OK, aby kontynuować.</string>
+  <string name="su_success_message">Performance Control otrzymał dostęp  do roota i busybox. Możemy startować!</string>
+  <string name="su_cancel_message">Wybrałeś opcję nie sprawdzania dostępu do roota i busybox.        Większość funkcji nie działa bez dostepu do roota. Sorry!</string>
+  <string name="su_failed_su_or_busybox">Nie otrzymano dostepu do roota, lub nie znaleziono busybox.	Większość funkcji nie działa bez dostępu do roota. Sorry!</string>
+  <string name="the_google_experience_">The Google Experience.</string>
+  <string name="play_store">Sklep Play</string>
+  <string name="books">Książki</string>
+</resources>
