@@ -22,12 +22,12 @@
 
     <FrameLayout
         android:id="@+id/content_frame"
-        android:layout_width="@dimen/side_panel_max_width"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
     <ListView
         android:id="@+id/left_drawer"
-        android:layout_width="fill_parent"
+        android:layout_width="285.00dp"
         android:layout_height="fill_parent"
         android:layout_gravity="start|left"
         android:background="@color/home_drawer"
