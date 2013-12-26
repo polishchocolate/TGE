@@ -9,10 +9,10 @@
         <item>Книги</item>
         <item>Календарь</item>
         <item>Медиа</item>
-        <item>Документы</item>
+        <item>Диск</item>
         <item>Земля</item>
         <item>Финансы</item>
-        <item>GMail</item>
+        <item>Gmail</item>
         <item>Goggles</item>
         <item>Поиск Google</item>
         <item>Google Плюс</item>
@@ -41,15 +41,26 @@
     <string name="su_success_title">Успешно!</string>
     <string name="su_failed_title">Увы!</string>
     <string name="first_run_message">Приложение должно проверить рут-доступ и
-        busybox. Нажмите OK для продолжения. </string>
+        busybox. Нажмите OK для продолжения. 
+</string>
     <string name="su_success_message">Управлению производительностью удалось получить рут-доступ и
-        найти busybox. Готово к действию!</string>
+        найти busybox. Готово к действию!
+</string>
     <string name="su_cancel_message">Вы выбрали не проверять рут и busybox.
-        Большинство опций не будут работать без рут-доступа. Извините!</string>
+        Большинство опций не будут работать без рут-доступа. Извините!
+</string>
     <string name="su_failed_su_or_busybox">Рут-доступ не определён или не найден busybox. Большинство
-        опций не будут работать без рут-доступа. Извините!</string>
+        опций не будут работать без рут-доступа. Извините!
+</string>
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Книги</string>
+    <string name="hi">HI</string>
+    <string name="lalala">idk</string>
+    <string name="changelog">См. историю изменений</string>
+    <string name="version_category">Версия</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Версия 6 Альфа</string>
+    <string name="preferences_string">Предпочтения!</string>
+    <string name="exit">Выход</string>
 
 </resources>
