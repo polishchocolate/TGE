@@ -25,6 +25,7 @@
     android:paddingRight="14dp"
     android:textAppearance="?android:attr/textAppearanceListItemSmall"
     android:textColor="@color/doclist_listview_primary_text"
+    android:textSize="15.0sp"
     android:textStyle="normal"
     android:typeface="normal"
     tools:targetApi="14" />

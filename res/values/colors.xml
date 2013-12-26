@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="hl">#FFe4e4e4</color>
+    <color name="gray32">#FF525252</color>
+    <color name="side_drawer_background">#fff5f5f5</color>
+    <color name="translucent_separator_line">#26000000</color>
+
     <item name="home_drawer_item_pressed" type="color">@color/books_corpora_primary_60pc</item>
 
     <color name="books_corpora_primary_60pc">#993f9fe0</color>
@@ -186,5 +191,6 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
+    <color name="beautiful_blue">#FF336699</color>
 
 </resources>

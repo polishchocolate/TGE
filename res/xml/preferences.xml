@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="About" >
+        <Preference
+            android:enabled="false"
+            android:key="cl"
+            android:selectable="false"
+            android:title="@string/changelog" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/version_category" >
+        <Preference
+            android:layout="@layout/version_in_preferences"
+            android:selectable="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

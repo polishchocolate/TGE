@@ -2,6 +2,7 @@ package com.kyler.mbq.tge;
 
 import org.w3c.dom.NodeList;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -13,7 +14,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -27,16 +30,22 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.cketti.library.changelog.ChangeLog;
 
 import com.kyler.mbq.tge.adapters.WelcomePagerAdapter;
+import com.kyler.mbq.tge.preferences.PreferencesActivity;
 
+@SuppressLint("WorldReadableFiles")
 public class TGE extends FragmentActivity {
 	public static class CategoriesFragment extends Fragment {
 
@@ -71,6 +80,8 @@ public class TGE extends FragmentActivity {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			selectItem(position);
+
+			view.isHorizontalFadingEdgeEnabled();
 		}
 	}
 
@@ -87,8 +98,7 @@ public class TGE extends FragmentActivity {
 
 	private DrawerLayout mDrawerLayout;
 
-	private ListView mDrawerList;
-
+	@SuppressWarnings("unused")
 	private CharSequence mDrawerTitle;
 
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -115,6 +125,10 @@ public class TGE extends FragmentActivity {
 	Toast toast;
 
 	WebView wv;
+
+	private ListView mDrawerList;
+
+	ImageView iv;
 
 	public Process getP() {
 		return p;
@@ -147,16 +161,20 @@ public class TGE extends FragmentActivity {
 
 		setContentView(R.layout.tge);
 
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 		mTitle = mDrawerTitle = getTitle();
+
+		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
 		mCategories = getResources().getStringArray(R.array.MenuDrawerStuff);
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-		mDrawerList = (ListView) findViewById(R.id.left_drawer);
+	
 
 		LayoutInflater inflater = getLayoutInflater();
-		ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header,
+		final ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header,
 				mDrawerList, false);
 		mDrawerList.addHeaderView(header, null, false);
 
@@ -167,6 +185,28 @@ public class TGE extends FragmentActivity {
 				R.layout.drawer_list_item, mCategories));
 
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+		mDrawerList.setOnScrollListener(new AbsListView.OnScrollListener() {
+
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
+				if (visibleItemCount == 0)
+					return;
+
+				if (view.getChildAt(0) != header) {
+				} else {
+					header.getTop();
+					header.getMeasuredHeight();
+				}
+
+			}
+
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+			}
+		});
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -181,20 +221,24 @@ public class TGE extends FragmentActivity {
 			@Override
 			public void onDrawerClosed(View view) {
 
-				getActionBar().setTitle(mTitle);
+				getActionBar().setTitle("Welcome!");
 
-				invalidateOptionsMenu(); // creates call to
-											// onPrepareOptionsMenu()
+				Drawable icon = null;
+				getActionBar().setIcon(icon);
+
+				invalidateOptionsMenu();
 
 			}
 
 			@Override
 			public void onDrawerOpened(View drawerView) {
 
-				getActionBar().setTitle(mDrawerTitle);
+				getActionBar().setTitle("Select an item.");
 
-				invalidateOptionsMenu(); // creates call to
-											// onPrepareOptionsMenu()
+				Drawable icon = null;
+				getActionBar().setIcon(icon);
+
+				invalidateOptionsMenu();
 
 			}
 		};
@@ -208,10 +252,10 @@ public class TGE extends FragmentActivity {
 
 		ViewPager viewPager = (ViewPager) findViewById(R.id.welcomePager);
 
-		// Set the ViewPagerAdapter into ViewPager
 		viewPager.setAdapter(new WelcomePagerAdapter(
 				getSupportFragmentManager()));
 	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -222,6 +266,16 @@ public class TGE extends FragmentActivity {
 
 		return super.onCreateOptionsMenu(menu);
 	}
+
+	final OnClickListener l = new OnClickListener() {
+		public void onClick(final View v) {
+			switch (v.getId()) {
+			case R.id.cl_lv:
+				showChangelog();
+				break;
+			}
+		}
+	};
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -241,6 +295,11 @@ public class TGE extends FragmentActivity {
 		return false;
 	}
 
+	public void showChangelog() {
+		new ChangeLog(this).getFullLogDialog().show();
+
+	}
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -254,6 +313,15 @@ public class TGE extends FragmentActivity {
 			Intent intent = new Intent(this, TGE.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+			break;
+
+		case R.id.settings:
+			Intent prefs = new Intent(TGE.this, PreferencesActivity.class);
+			startActivity(prefs);
+			break;
+			
+		case R.id.X:
+			super.onBackPressed();
 			break;
 
 		default:
@@ -441,6 +509,10 @@ public class TGE extends FragmentActivity {
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
 
+	protected void showAlert(String string, String string2) {
+
+	}
+
 	public void setP(Process p) {
 		this.p = p;
 	}
@@ -449,10 +521,5 @@ public class TGE extends FragmentActivity {
 	public void setTitle(CharSequence title) {
 		mTitle = title;
 		getActionBar().setTitle(mTitle);
-	}
-
-	protected void showAlert(String string, String string2) {
-		// TODO Auto-generated method stub
-
 	}
 }

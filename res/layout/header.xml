@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/navigation_background" >
+    android:background="#fff5f5f5" >
 
     <ImageView
         android:id="@+id/imageView1"
@@ -10,15 +11,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/ic_launcher" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_tge_text"
+        tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/cl_lv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView1"
-        android:src="@drawable/welcome_dv" />
+        android:layout_centerVertical="true"
+        android:scaleType="matrix"
+        android:src="@drawable/ic_changelog"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>

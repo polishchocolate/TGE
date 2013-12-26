@@ -51,5 +51,12 @@
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Books</string>
+    <string name="hi">HI</string>
+    <string name="lalala">idk</string>
+    <string name="changelog">View the Changelog</string>
+    <string name="version_category">Version</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Version 6 Alpha</string>
+    <string name="preferences_string">Preferences!</string>
+    <string name="exit">Exit</string>
 
 </resources>

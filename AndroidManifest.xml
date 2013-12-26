@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kyler.mbq.tge"
-    android:versionCode="5"
+    android:versionCode="6"
     android:versionName="0.0.0.1" >
 
     <uses-sdk
@@ -23,7 +23,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Holo.Light" >
+        android:configChanges="keyboardHidden|orientation"
+        android:theme="@style/SoulTrain" >
         <activity
             android:name="com.kyler.mbq.tge.TGE"
             android:label="@string/app_name" >
@@ -42,6 +43,11 @@
             android:name="com.kyler.mbq.tge.activities.BooksActivity"
             android:label="@string/books" >
         </activity>
+        <activity
+            android:name="com.kyler.mbq.tge.preferences.PreferencesActivity"
+            android:label="@string/preferences_string"
+            android:theme="@style/CoolPreferenceTheme" >
+        </activity>      
     </application>
 
 </manifest>

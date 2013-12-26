@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog>
+
+    <release
+        version="0.0.0.1"
+        versioncode="6" >
+        <change>Refreshed new layout</change>
+        <change>Bugfixes</change>
+        <change>Translation fixes and additions</change>
+        <change>Some fun, experimental stuff </change>
+        <change>Preferences</change>
+        <change>Stuff in the ActionBar</change>
+        <change>Fixed the rotation bug</change>
+    </release>
+
+</changelog>

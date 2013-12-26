@@ -1,10 +1,39 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <style name="SoulTrain" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/AB</item>
+        <item name="android:fontFamily">Roboto-Light</item>
+    </style>
+
+    <style name="AB" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/beautiful_blue</item>
+        <item name="android:fontFamily">Roboto-Light</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+    
     <style name="nowCardStyle" parent="android:Widget.TextView">
         <item name="android:background">@drawable/search_bg_shadow</item>
         <item name="android:minHeight">135dp</item>
         <item name="android:minWidth">160dp</item>
-        <item name="android:textColor">#000000</item>
     </style>
+
+    <style name="nowCardStyle_far" parent="android:Widget.TextView">
+        <item name="android:background">@drawable/search_bg_shadow</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:minWidth">20dp</item>
+    </style>
+    
+    <style name="CoolPreferenceTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/AB1</item>
+        <item name="android:windowBackground">@drawable/hl_bg_prefs</item>
+    </style>
+
+    <style name="AB1" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/gray32</item>
+        <item name="android:fontFamily">Roboto-Light</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>  
 
 </resources>
