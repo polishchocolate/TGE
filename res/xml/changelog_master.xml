@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    
+    <release
+        version="0.0.0.1"
+        versioncode="7" >
+        <change>Improved performance</change>
+        <change>Removed some unneeded stuff to reduce the apps size</change>
+        <change>Cleanup</change>
+        <change>Updated translations</change>
+    </release>    
 
     <release
         version="0.0.0.1"

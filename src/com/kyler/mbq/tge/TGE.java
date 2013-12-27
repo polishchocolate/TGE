@@ -40,10 +40,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import de.cketti.library.changelog.ChangeLog;
 
 import com.kyler.mbq.tge.adapters.WelcomePagerAdapter;
 import com.kyler.mbq.tge.preferences.PreferencesActivity;
+
+import de.cketti.library.changelog.ChangeLog;
 
 @SuppressLint("WorldReadableFiles")
 public class TGE extends FragmentActivity {
@@ -171,8 +172,6 @@ public class TGE extends FragmentActivity {
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-	
-
 		LayoutInflater inflater = getLayoutInflater();
 		final ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header,
 				mDrawerList, false);
@@ -256,7 +255,6 @@ public class TGE extends FragmentActivity {
 				getSupportFragmentManager()));
 	}
 
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -268,6 +266,7 @@ public class TGE extends FragmentActivity {
 	}
 
 	final OnClickListener l = new OnClickListener() {
+		@Override
 		public void onClick(final View v) {
 			switch (v.getId()) {
 			case R.id.cl_lv:
@@ -319,7 +318,7 @@ public class TGE extends FragmentActivity {
 			Intent prefs = new Intent(TGE.this, PreferencesActivity.class);
 			startActivity(prefs);
 			break;
-			
+
 		case R.id.X:
 			super.onBackPressed();
 			break;
