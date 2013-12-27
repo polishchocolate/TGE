@@ -29,14 +29,14 @@
         <item>Tłumacz</item>
         <item>Wyszukiwanie Głosowe</item>
         <item>Wallet</item>
-        <item>Youtube</item>
+        <item>YouTube</item>
     </string-array>
 
     <string name="the">The</string>
     <string name="experience_">Experience.</string>
     <string name="learn_more_">Więcej</string>
     <string name="about">O aplikacji</string>
-    <string name="explanation">Pomysł naszedł mnie wczoraj, gdy używałem Chrome. Miałem to w Windowsie 8, więc dlaczegoby nie skupić wszystkich najlepszych aplikacji od Google\'a w jednym, dogodnym miejscu? Po prostu wysuń szufladę menu i wybierz aplikację, którą chcesz. Otwiera się, ty jesteś zadowolony, ja jestem zadowolony. Wszyscy jesteśmy tu zwycięzcami ;)</string>
+    <string name="explanation">Pomysł naszedł mnie wczoraj, gdy używałem Chrome. Miałem to już w Windowsie 8, więc dlaczegoby nie skupić wszystkich najlepszych aplikacji od Google\'a w jednym, dogodnym miejscu w telefonie? Po prostu wysuń szufladę menu i wybierz aplikację, którą chcesz. Otwiera się, ty jesteś zadowolony, ja jestem zadowolony. Wszyscy jesteśmy tu zwycięzcami ;)</string>
     <string name="first_run_title">Najpierw sprawdź dostęp do roota</string>
     <string name="su_success_title">Sukces!</string>
     <string name="su_failed_title">Ups!</string>
@@ -47,5 +47,12 @@
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Sklep Play</string>
     <string name="books">Książki</string>
+    <string name="hi">HI</string>
+    <string name="lalala">idk</string>
+    <string name="changelog">Zobacz listę zmian</string>
+    <string name="version_category">Wersja</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Version 6 Alpha</string>
+    <string name="preferences_string">Ustawienia</string>
+    <string name="exit">Wyjście</string>
 
 </resources>
