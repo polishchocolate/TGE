@@ -55,12 +55,10 @@
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Книги</string>
-    <string name="hi">HI</string>
-    <string name="lalala">idk</string>
     <string name="changelog">См. историю изменений</string>
     <string name="version_category">Версия</string>
-    <string name="ver_in_prefs_version">0.0.0.1, Версия 6 Альфа</string>
-    <string name="preferences_string">Предпочтения!</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Версия 7 (альфа)</string>
+    <string name="preferences_string">Предпочтения</string>
     <string name="exit">Выход</string>
 
 </resources>
