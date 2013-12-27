@@ -42,15 +42,24 @@
     <string name="su_success_title">Succès!</string>
     <string name="su_failed_title">Oups!</string>
     <string name="first_run_message">L\'application a besoin d\'un contrôle root et
-        busybox. Appuyé sur OK pour continuer.</string>
+        busybox. Appuyé sur OK pour continuer.
+</string>
     <string name="su_success_message">Performance Control a été en mesure d\'obtenir l\'accès root et
-        à trouver busybox. C\'est parti !</string>
+        à trouver busybox. C\'est parti !
+</string>
     <string name="su_cancel_message">Vous avez choisi de ne pas donner utiliser le root et busybox.
-        La plupart des options ne fonctionnent pas sans l\'accès root. Désolé!</string>
+        La plupart des options ne fonctionnent pas sans l\'accès root. Désolé!
+</string>
     <string name="su_failed_su_or_busybox">L\'accès root a échoué ou busybox n\'a pas été trouvé. 
-        La plupart des options ne fonctionnent pas sans l\'accès root. Désolé!</string>
+        La plupart des options ne fonctionnent pas sans l\'accès root. Désolé!
+</string>
     <string name="the_google_experience_">The Google Experience.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Livres</string>
+ <string name="changelog">Voir le Changelog</string>
+    <string name="version_category">Version</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Version 7 (Alpha)</string>
+    <string name="preferences_string">Préférences</string>
+    <string name="exit">Sortie</string>
 
 </resources>

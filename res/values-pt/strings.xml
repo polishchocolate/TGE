@@ -42,15 +42,25 @@
     <string name="su_success_title">Sucesso!</string>
     <string name="su_failed_title">Oops!</string>
     <string name="first_run_message">O aplicativo precisa verificar se há accesso root
-        e busybox. Pressione OK para continuar.</string>
+        e busybox. Pressione OK para continuar.
+</string>
     <string name="su_success_message">Controle de Desempenho foi capaz de obter acesso root
-        e encontrar busybox. Para o rock!</string>
+        e encontrar busybox. Para o rock!
+</string>
     <string name="su_cancel_message">Você optou por não verificar a existência de raiz e busybox.
-        A maioria das opções não funciona sem acesso root. Desculpe!</string>
+        A maioria das opções não funciona sem acesso root. Desculpe!
+</string>
     <string name="su_failed_su_or_busybox">Acesso Root falhou ou busybox não foi encontrado.
-        A maioria das opções não funciona sem acesso root. Desculpe!</string>
+        A maioria das opções não funciona sem acesso root. Desculpe!
+</string>
     <string name="the_google_experience_">A Experiência do Google.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Livros</string>
+    <string name="changelog">Ver o Changelog</string>
+    <string name="version_category">Versão</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Versão 7 (Alpha)</string>
+    <string name="preferences_string">Preferências</string>
+    <string name="exit">Saída</string>
+
 
 </resources>

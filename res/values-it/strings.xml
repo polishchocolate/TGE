@@ -42,15 +42,25 @@
     <string name="su_success_title">Ben fatto!</string>
     <string name="su_failed_title">Oops!</string>
     <string name="first_run_message">L\'applicazione necessita di controllare l\'accesso alla root ed
-        al busybox. Premi OK per continuare. </string>
+        al busybox. Premi OK per continuare. 
+</string>
     <string name="su_success_message">Performance Control è in grado di ottenere l\'accesso al root e
-        trovare il busybox. Pronto per partire!</string>
+        trovare il busybox. Pronto per partire!
+</string>
     <string name="su_cancel_message">Tu hai scelto di non controllare root e busybox.
-        Molte opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!</string>
+        Molte opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!
+</string>
     <string name="su_failed_su_or_busybox">L\;accesso al roon non ha avuto successo o il busybox non è stato trovato. Molte
-        opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!</string>
+        opzioni non funzioneranno senza l\'accesso al root. Ci dispiace!
+</string>
     <string name="the_google_experience_">L\'Esperienza Google.</string>
     <string name="play_store">Play Store</string>
     <string name="books">Libri</string>
+    <string name="changelog">Vizualizzare il Changelog</string>
+    <string name="version_category">Versione</string>
+    <string name="ver_in_prefs_version">0.0.0.1, Versione 7 (Alpha)</string>
+    <string name="preferences_string">Preferenze</string>
+    <string name="exit">Uscita</string>
+
 
 </resources>
