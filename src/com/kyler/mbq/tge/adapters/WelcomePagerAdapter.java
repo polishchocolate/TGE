@@ -13,7 +13,7 @@ public class WelcomePagerAdapter extends FragmentPagerAdapter {
 	Context context;
 	final int PAGE_COUNT = 2;
 	// Tab Titles
-	private String tabtitles[] = new String[] { "Welcome", "Learn More" };
+	private String tabtitles[] = new String[] { "Welcome!", "Learn More" };
 
 	public WelcomePagerAdapter(FragmentManager fm) {
 		super(fm);

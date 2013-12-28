@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
-    
+
+    <release
+        version="0.0.0.2.0"
+        versioncode="8" >
+        <change>
+VOICE CONTROL
+        </change>
+        <change>
+New changelog actionbar icon
+        </change>
+        <change>
+Minor layout changes
+        </change>
+        <change>
+Updated translations
+        </change>
+        <change>
+Make the design more professional
+        </change>
+        <change>
+Remove more unused stuff
+        </change>
+        <change>
+Added an app version footer
+        </change>
+    </release>
     <release
         version="0.0.0.1"
         versioncode="7" >
-        <change>Improved performance</change>
-        <change>Removed some unneeded stuff to reduce the apps size</change>
-        <change>Cleanup</change>
-        <change>Updated translations</change>
-    </release>    
-
+        <change>
+Improved performance
+        </change>
+        <change>
+Removed some unneeded stuff to reduce the apps size
+        </change>
+        <change>
+Cleanup
+        </change>
+        <change>
+Updated translations
+        </change>
+    </release>
     <release
         version="0.0.0.1"
         versioncode="6" >
-        <change>Refreshed new layout</change>
-        <change>Bugfixes</change>
-        <change>Translation fixes and additions</change>
-        <change>Some fun, experimental stuff </change>
-        <change>Preferences</change>
-        <change>Stuff in the ActionBar</change>
-        <change>Fixed the rotation bug</change>
+        <change>
+Refreshed new layout
+        </change>
+        <change>
+Bugfixes
+        </change>
+        <change>
+Translation fixes and additions
+        </change>
+        <change>
+Some fun, experimental stuff 
+        </change>
+        <change>
+Preferences
+        </change>
+        <change>
+Stuff in the ActionBar
+        </change>
+        <change>
+Fixed the rotation bug
+        </change>
     </release>
 
 </changelog>

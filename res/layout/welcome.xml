@@ -9,20 +9,11 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_gravity="center"
-        android:scaleType="fitStart"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_google"
         tools:ignore="ContentDescription" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:fontFamily="catull"
-        android:text="@string/the_google_experience_"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#0266C8" />
 
 </RelativeLayout>

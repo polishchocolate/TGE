@@ -1,8 +1,11 @@
 package com.kyler.mbq.tge;
 
+import java.util.ArrayList;
+
 import org.w3c.dom.NodeList;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -15,10 +18,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
@@ -30,10 +35,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -41,6 +44,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kyler.mbq.tge.activities.CheatSheet;
 import com.kyler.mbq.tge.adapters.WelcomePagerAdapter;
 import com.kyler.mbq.tge.preferences.PreferencesActivity;
 
@@ -93,13 +97,21 @@ public class TGE extends FragmentActivity {
 	// Used later
 	Intent intent;
 
+	TextView text;
+
+	public ListView mList;
+
+	public static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
+
 	private long lastPressedTime;
 
 	private String[] mCategories;
 
 	private DrawerLayout mDrawerLayout;
 
-	@SuppressWarnings("unused")
+	private DrawerLayout mDrawerLayout2;
+
+	@SuppressWarnings("unused") // y
 	private CharSequence mDrawerTitle;
 
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -118,18 +130,23 @@ public class TGE extends FragmentActivity {
 
 	SharedPreferences prefs;
 
+	Activity callerActivity;
+
 	// Fragment welcome = new Welcome();
 
 	TextView textview;
 
-	// MMMMMM TOAST
 	Toast toast;
 
 	WebView wv;
 
 	private ListView mDrawerList;
 
+	private ListView mDrawerList2;
+
 	ImageView iv;
+
+	private PackageManager pm;
 
 	public Process getP() {
 		return p;
@@ -147,14 +164,16 @@ public class TGE extends FragmentActivity {
 		try {
 			super.onConfigurationChanged(newConfig2);
 			if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-				// land
+
 			} else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-				// port
+
 			}
 		} catch (Exception ex) {
 		}
 	}
 
+	@SuppressLint("CutPasteId")
+	// wtf
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -172,10 +191,23 @@ public class TGE extends FragmentActivity {
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+		mDrawerList2 = (ListView) findViewById(R.id.list);
+
+		setmDrawerLayout2((DrawerLayout) findViewById(R.id.drawer_layout));
+
 		LayoutInflater inflater = getLayoutInflater();
-		final ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header,
-				mDrawerList, false);
-		mDrawerList.addHeaderView(header, null, false);
+
+		text = new TextView(this);
+
+		/*
+		 * final ViewGroup header = (ViewGroup)
+		 * inflater.inflate(R.layout.header, mDrawerList, false);
+		 * mDrawerList.addHeaderView(header, null, false);
+		 */
+
+		final ViewGroup footer = (ViewGroup) inflater.inflate(
+				R.layout.version_in_preferences, mDrawerList, false);
+		mDrawerList.addFooterView(footer, null, false);
 
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
 				GravityCompat.START);
@@ -184,28 +216,6 @@ public class TGE extends FragmentActivity {
 				R.layout.drawer_list_item, mCategories));
 
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-		mDrawerList.setOnScrollListener(new AbsListView.OnScrollListener() {
-
-			@Override
-			public void onScroll(AbsListView view, int firstVisibleItem,
-					int visibleItemCount, int totalItemCount) {
-				if (visibleItemCount == 0)
-					return;
-
-				if (view.getChildAt(0) != header) {
-				} else {
-					header.getTop();
-					header.getMeasuredHeight();
-				}
-
-			}
-
-			@Override
-			public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-			}
-		});
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -265,17 +275,6 @@ public class TGE extends FragmentActivity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	final OnClickListener l = new OnClickListener() {
-		@Override
-		public void onClick(final View v) {
-			switch (v.getId()) {
-			case R.id.cl_lv:
-				showChangelog();
-				break;
-			}
-		}
-	};
-
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
@@ -308,19 +307,26 @@ public class TGE extends FragmentActivity {
 		}
 		switch (item.getItemId()) {
 
-		case android.R.id.home:
-			Intent intent = new Intent(this, TGE.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			startActivity(intent);
-			break;
-
 		case R.id.settings:
 			Intent prefs = new Intent(TGE.this, PreferencesActivity.class);
 			startActivity(prefs);
 			break;
 
+		case R.id.CL:
+			showChangelog();
+			break;
+
+		case R.id.launchApp:
+			voice();
+			break;
+
 		case R.id.X:
-			super.onBackPressed();
+			super.finish();
+			break;
+
+		case R.id.cs:
+			Intent CHEATER = new Intent(this, CheatSheet.class);
+			startActivity(CHEATER);
 			break;
 
 		default:
@@ -329,6 +335,67 @@ public class TGE extends FragmentActivity {
 		;
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void voice() {
+		Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+				RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+		intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+				"Which app would you like to open?");
+		startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == VOICE_RECOGNITION_REQUEST_CODE
+				&& resultCode == RESULT_OK) {
+			ArrayList<String> gapps = data
+					.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+			mDrawerList2.setAdapter(new ArrayAdapter<String>(this,
+					android.R.layout.simple_list_item_1, gapps));
+
+			// mDrawerLayout2.openDrawer(mDrawerList2);
+
+			if (gapps.contains("Books")) {
+				Intent intent = new Intent("android.intent.action.MAIN");
+				intent.setComponent(ComponentName
+						.unflattenFromString("com.google.android.apps.books/com.google.android.apps.books.app.BooksActivity"));
+				intent.addCategory("android.intent.category.LAUNCHER");
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+
+				// Standard error stuff
+
+			} else if (resultCode == RecognizerIntent.RESULT_AUDIO_ERROR) {
+				showToastMessage("Audio Error");
+			} else if (resultCode == RecognizerIntent.RESULT_CLIENT_ERROR) {
+				showToastMessage("Client Error");
+			} else if (resultCode == RecognizerIntent.RESULT_NETWORK_ERROR) {
+				showToastMessage("Network Error");
+			} else if (resultCode == RecognizerIntent.RESULT_NO_MATCH) {
+				showToastMessage("No Match");
+			} else if (resultCode == RecognizerIntent.RESULT_SERVER_ERROR) {
+				showToastMessage("Server Error");
+
+				// End of standard error stuff
+			}
+
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	private void showToastMessage(String message) {
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+	}
+
+	public void informationMenu() {
+		startActivity(new Intent("android.intent.action.INFOSCREEN"));
+	}
+
+	public void voiceinputbuttons() {
+		mDrawerList2 = (ListView) findViewById(R.id.list);
 	}
 
 	/**
@@ -377,8 +444,7 @@ public class TGE extends FragmentActivity {
 				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
 						this);
 				downloadDialog.setTitle(":(");
-				downloadDialog
-						.setMessage("C'mon man. You gotta install it first.");
+				downloadDialog.setMessage("App not installed.");
 				downloadDialog.setPositiveButton("Help me please",
 						new DialogInterface.OnClickListener() {
 							@Override
@@ -398,13 +464,13 @@ public class TGE extends FragmentActivity {
 								}
 							}
 						});
-				downloadDialog.setNegativeButton("I'm better than u lol",
+				downloadDialog.setNegativeButton("No thanks",
 						new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int i) {
 
 								dialog.dismiss();
-								finish();
+								// finish();
 							}
 						});
 				downloadDialog.show();
@@ -415,6 +481,7 @@ public class TGE extends FragmentActivity {
 			 * books.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 			 * startActivity(books);
 			 */
+
 			break;
 
 		case 2:
@@ -434,8 +501,7 @@ public class TGE extends FragmentActivity {
 				AlertDialog.Builder downloadDialog = new AlertDialog.Builder(
 						this);
 				downloadDialog.setTitle(":(");
-				downloadDialog
-						.setMessage("C'mon man. You gotta install it first.");
+				downloadDialog.setMessage("App not installed.");
 				downloadDialog.setPositiveButton("Help me please",
 						new DialogInterface.OnClickListener() {
 							@Override
@@ -455,13 +521,13 @@ public class TGE extends FragmentActivity {
 								}
 							}
 						});
-				downloadDialog.setNegativeButton("I'm better than u lol",
+				downloadDialog.setNegativeButton("No thanks",
 						new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int i) {
 
 								dialog.dismiss();
-								finish();
+								// finish();
 							}
 						});
 				downloadDialog.show();
@@ -520,5 +586,21 @@ public class TGE extends FragmentActivity {
 	public void setTitle(CharSequence title) {
 		mTitle = title;
 		getActionBar().setTitle(mTitle);
+	}
+
+	public PackageManager getPm() {
+		return pm;
+	}
+
+	public void setPm(PackageManager pm) {
+		this.pm = pm;
+	}
+
+	public DrawerLayout getmDrawerLayout2() {
+		return mDrawerLayout2;
+	}
+
+	public void setmDrawerLayout2(DrawerLayout mDrawerLayout2) {
+		this.mDrawerLayout2 = mDrawerLayout2;
 	}
 }
